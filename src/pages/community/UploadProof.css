@@ -1,0 +1,114 @@
+.upload-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.upload-form__section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.upload-dropzone {
+  border: 2px dashed rgba(0, 229, 155, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  background: rgba(0, 229, 155, 0.02);
+}
+
+.upload-dropzone:hover, .upload-dropzone--active {
+  border-color: var(--accent-green);
+  background: rgba(0, 229, 155, 0.05);
+  box-shadow: 0 0 30px var(--accent-green-glow);
+}
+
+.upload-dropzone__icon { font-size: 2.5rem; margin-bottom: 8px; }
+.upload-dropzone__text { font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+.upload-dropzone__hint { font-size: 0.8rem; color: var(--text-tertiary); }
+
+.upload-previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 8px;
+  margin-top: var(--space-md);
+}
+
+.upload-preview {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--bg-secondary);
+}
+
+.upload-preview img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+.upload-preview__remove {
+  position: absolute; top: 4px; right: 4px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.upload-preview__name {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.7);
+  padding: 2px 4px;
+  font-size: 0.6rem;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.upload-submit {
+  text-align: center;
+}
+
+.upload-submit__hint {
+  margin-top: var(--space-md);
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.upload-video-name {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px; height: 16px;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .upload-form__grid { grid-template-columns: 1fr; }
+}

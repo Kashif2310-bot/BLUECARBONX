@@ -1,0 +1,47 @@
+.glass-card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.glass-card--hover:hover {
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-green);
+}
+
+.glass-card--glow {
+  box-shadow: var(--shadow-glow-green);
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.glass-card--success { border-color: rgba(0, 229, 155, 0.25); }
+.glass-card--success .glass-card__accent {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gradient-green);
+}
+
+.glass-card--danger { border-color: rgba(239, 68, 68, 0.25); }
+.glass-card--danger .glass-card__accent {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #EF4444, #F59E0B);
+}
+
+.glass-card--warning { border-color: rgba(245, 158, 11, 0.25); }
+.glass-card--warning .glass-card__accent {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #F59E0B, #EF4444);
+}
+
+.glass-card--cyan { border-color: rgba(0, 212, 255, 0.2); }
+.glass-card--cyan:hover { border-color: rgba(0, 212, 255, 0.4); box-shadow: var(--shadow-glow-cyan); }
+.glass-card--cyan .glass-card__accent {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #00D4FF, #3B82F6);
+}

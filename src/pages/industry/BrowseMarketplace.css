@@ -1,0 +1,161 @@
+.marketplace-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: var(--space-xl);
+}
+
+.market-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.market-card__location, .market-card__community {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.market-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-lg);
+}
+
+.market-card__price-tag {
+  text-align: right;
+  background: rgba(0, 229, 155, 0.08);
+  border: 1px solid rgba(0, 229, 155, 0.2);
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+}
+
+.price-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-green);
+}
+
+.price-unit {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+}
+
+.market-card__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.mc-stat-label {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.mc-stat-value {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.market-card__species {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+
+.species-tag {
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 229, 155, 0.06);
+  font-size: 0.7rem;
+  color: var(--accent-green-dim);
+}
+
+.market-card__blockchain {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-lg);
+  font-size: 0.75rem;
+}
+
+.bc-label { color: var(--text-tertiary); }
+.bc-verified { color: var(--accent-green); font-weight: 700; }
+
+.market-card__buy { width: 100%; }
+
+/* Purchase Modal */
+.purchase-project {
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.purchase-price-display {
+  display: flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.purchase-total {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.purchase-total strong {
+  color: var(--accent-green);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.purchase-includes {
+  margin-bottom: var(--space-lg);
+}
+
+.purchase-includes p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding: 3px 0;
+}
+
+/* Success */
+.purchase-success-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.purchase-complete h3 { text-align: center; margin-bottom: var(--space-lg); }
+
+.purchase-receipt {
+  margin-bottom: var(--space-xl);
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.85rem;
+}
+
+.receipt-row span { color: var(--text-tertiary); }
+.receipt-row strong { color: var(--text-primary); }
+
+.tx-hash { font-size: 0.7rem; }
+
+.purchase-complete .btn { width: 100%; }
+
+@media (max-width: 768px) {
+  .marketplace-grid { grid-template-columns: 1fr; }
+  .market-card__stats { grid-template-columns: repeat(2, 1fr); }
+}

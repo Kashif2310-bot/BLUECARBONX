@@ -1,0 +1,61 @@
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.admin-panel h3 { margin-bottom: 4px; font-size: 1rem; }
+.admin-panel__sub { font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: var(--space-lg); }
+
+.admin-members {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-member {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.02);
+  transition: background var(--transition-fast);
+}
+
+.admin-member:hover { background: rgba(255,255,255,0.04); }
+
+.admin-member__avatar { font-size: 1.5rem; }
+.admin-member__name { display: block; font-size: 0.9rem; font-weight: 600; }
+.admin-member__role { display: block; font-size: 0.75rem; color: var(--text-tertiary); }
+
+.admin-queue-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-md);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 4px;
+}
+
+.admin-queue-item:hover { background: rgba(255,255,255,0.03); }
+
+.admin-queue-item--flagged { border-left: 2px solid #F59E0B; }
+
+.admin-queue-name { display: block; font-size: 0.9rem; font-weight: 600; }
+.admin-queue-date { display: block; font-size: 0.75rem; color: var(--text-tertiary); }
+.admin-queue-flag-reason { display: block; font-size: 0.7rem; color: #F59E0B; }
+
+.admin-flagged-title {
+  font-size: 0.85rem;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: #F59E0B;
+}
+
+@media (max-width: 768px) {
+  .admin-grid { grid-template-columns: 1fr; }
+}

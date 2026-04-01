@@ -1,0 +1,118 @@
+.pipeline {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  overflow-x: auto;
+}
+
+.pipeline__track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  min-width: max-content;
+  padding: 0 var(--space-lg);
+}
+
+.pipeline__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 100px;
+}
+
+.pipeline__connector {
+  position: absolute;
+  top: 24px;
+  right: 50%;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.06);
+  z-index: 0;
+}
+
+.pipeline__connector-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gradient-green);
+  transition: width 0.6s ease;
+  border-radius: 2px;
+}
+
+.pipeline__connector--active .pipeline__connector-fill {
+  width: 100%;
+  box-shadow: 0 0 8px var(--accent-green-glow);
+}
+
+.pipeline__node {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: all var(--transition-base);
+}
+
+.pipeline__step--active .pipeline__node {
+  border-color: var(--accent-green);
+  background: rgba(0, 229, 155, 0.1);
+  box-shadow: 0 0 15px var(--accent-green-glow);
+}
+
+.pipeline__step--current .pipeline__node {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.pipeline__node-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-green);
+  opacity: 0.3;
+  animation: ringPulse 2s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.15); opacity: 0; }
+}
+
+.pipeline__icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.pipeline__label {
+  margin-top: var(--space-sm);
+  text-align: center;
+}
+
+.pipeline__label-main {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+.pipeline__step--active .pipeline__label-main {
+  color: var(--accent-green);
+}
+
+.pipeline__label-sub {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+/* Compact variant */
+.pipeline--compact .pipeline__step { min-width: 70px; }
+.pipeline--compact .pipeline__node { width: 36px; height: 36px; }
+.pipeline--compact .pipeline__icon { font-size: 0.9rem; }
+.pipeline--compact .pipeline__connector { top: 18px; }
